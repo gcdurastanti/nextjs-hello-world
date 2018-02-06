@@ -1,0 +1,9 @@
+{
+	"presets": ["next/babel", "env"],
+	"plugins": [
+		"transform-class-properties",
+		"transform-object-assign",
+		"jsx-control-statements",
+		["styled-components", { "ssr": true, "displayName": false, "preprocess": true } ]
+	]
+}

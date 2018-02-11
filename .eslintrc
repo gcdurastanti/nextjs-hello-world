@@ -1,7 +1,7 @@
 {
 	"root": true,
 	"extends": [
-		"eslint:recommended",
+		"airbnb",
 		"prettier",
 		"plugin:react/recommended",
 		"plugin:jsx-control-statements/recommended"
@@ -18,10 +18,7 @@
             "jsx": true
         }
     },
-    "rules": {
-		"semi": 2,
-		"no-trailing-spaces": 2
-	},
+    "rules": {},
 	"env": {
 		"jsx-control-statements/jsx-control-statements": true
 	}

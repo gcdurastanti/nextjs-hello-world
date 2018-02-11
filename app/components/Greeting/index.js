@@ -1,3 +1,4 @@
-import Greeting from './styles';
+import Component from './Greeting';
+import StyledComponent from './styles';
 
-export default Greeting;
+export default StyledComponent(Component);

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import Header from './Header';
 
-export default styled(Header)`
+export const Header = Component => styled(Component)`
 	background-color: white;
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 	color: black;
@@ -9,3 +8,5 @@ export default styled(Header)`
 	text-align: center;
 	padding: 10px 0;
 `;
+
+export default Header;

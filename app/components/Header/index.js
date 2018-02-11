@@ -1,3 +1,4 @@
-import Header from './styles';
+import Component from './Header';
+import StyledComponent from './styles';
 
-export default Header;
+export default StyledComponent(Component);

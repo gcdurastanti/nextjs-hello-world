@@ -8,15 +8,14 @@ import globalStyles from '../styles/global-styles';
 
 const { Html, Body, Main } = stickyVerticalLayout(_Main);
 
+// injectGlobalStyles
+globalStyles();
+
 export default class MyDocument extends Document {
 	static async getInitialProps({ renderPage }) {
 		const sheet = new ServerStyleSheet();
 		const page = renderPage(App => props => sheet.collectStyles(<App {...props} />));
 		const styleTags = sheet.getStyleElement();
-
-		// injectGlobalStyles
-		globalStyles();
-
 		return { ...page, styleTags };
 	}
 

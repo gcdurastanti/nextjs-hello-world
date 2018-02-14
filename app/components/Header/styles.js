@@ -7,6 +7,7 @@ export const Header = Component => styled(Component)`
 	font-size: 16px;
 	text-align: center;
 	padding: 10px 0;
+	z-index: 10;
 `;
 
 export default Header;

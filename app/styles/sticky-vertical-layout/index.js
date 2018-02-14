@@ -1,11 +1,18 @@
-import styled from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 
-export const Html = styled.html`
-	height: 100%;
-	overflow: hidden;
+export const stickyVerticalLayout = injectGlobal`
+	html {
+		overflow: hidden;
+	}
+
+	html,
+	body,
+	#__next {
+		height: 100%;
+	}
 `;
 
-export const Body = styled.body`
+export const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	flex: 1 0 auto;
@@ -13,7 +20,7 @@ export const Body = styled.body`
 	min-height: 100vh;
 `;
 
-export const Main = Component => styled(Component)`
+export const Main = styled.main`
 	display: flex;
 	flex-grow: 1;
 	flex-direction: column;
@@ -23,10 +30,6 @@ export const Main = Component => styled(Component)`
 	overflow-y: auto;
 `;
 
-export const StickyVerticalLayout = Component => ({
-	Html,
-	Body,
-	Main: Main(Component)
-});
+export const StickyVerticalLayout = () => ({ Wrapper, Main });
 
 export default StickyVerticalLayout;

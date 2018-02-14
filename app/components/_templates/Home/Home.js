@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Row } from 'react-styled-flexboxgrid';
+
+import Page from '../Page';
 import Greeting from '../../Greeting';
 import { Title, Col } from './styles';
 
 export const Home = ({ className }) => (
-	<div className={className}>
+	<Page className={className}>
 		<Title>Home</Title>
 		<Grid>
 			<Row>
@@ -29,7 +31,7 @@ export const Home = ({ className }) => (
 				</Col>
 			</Row>
 		</Grid>
-	</div>
+	</Page>
 );
 
 Home.propTypes = {

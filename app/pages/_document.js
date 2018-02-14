@@ -1,12 +1,7 @@
 import React from 'react';
-import Document, { Head, Main as _Main, NextScript } from 'next/document';
+import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import stickyVerticalLayout from '../styles/sticky-vertical-layout';
 import globalStyles from '../styles/global-styles';
-
-const { Html, Body, Main } = stickyVerticalLayout(_Main);
 
 // injectGlobalStyles
 globalStyles();
@@ -22,7 +17,7 @@ export default class MyDocument extends Document {
 	render() {
 		const { styleTags } = this.props;
 		return (
-			<Html>
+			<html lang="en-US">
 				<Head>
 					<meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,13 +25,11 @@ export default class MyDocument extends Document {
 					<title>Next.js Hello World</title>
 					{styleTags}
 				</Head>
-				<Body>
-					<Header />
+				<body>
 					<Main />
-					<Footer />
 					<NextScript />
-				</Body>
-			</Html>
+				</body>
+			</html>
 		);
 	}
 }

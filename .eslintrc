@@ -18,7 +18,13 @@
             "jsx": true
         }
     },
-    "rules": {},
+    "rules": {
+		"react/jsx-indent": "off",
+		"react/jsx-indent-props": "off",
+		"import/no-named-as-default": "off",
+		"react/no-unescaped-entities": "off",
+		"react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
+	},
 	"env": {
 		"jsx-control-statements/jsx-control-statements": true
 	}

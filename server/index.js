@@ -6,7 +6,7 @@ import Bluebird from 'bluebird';
 import pkg from '../package.json';
 import nextConfig from '../next.config';
 
-const server = () => {
+const Server = () => {
 	const port = parseInt(process.env.PORT, 10) || 3000;
 	const dev = process.env.NODE_ENV !== 'production';
 	const nextApp = next({ dir: './app', dev, conf: nextConfig });
@@ -33,6 +33,8 @@ const server = () => {
 		return nextApp.prepare().then(() => {
 			server.listen(port, err => {
 				if (err) throw err;
+
+				// eslint-disable-next-line no-console
 				console.log(`> Ready on http://localhost:${port}`);
 			});
 		});
@@ -48,4 +50,4 @@ const server = () => {
 	});
 };
 
-export default server;
+export default Server;

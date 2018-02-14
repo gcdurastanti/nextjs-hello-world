@@ -1,4 +1,4 @@
-import styled, { injectGlobal } from 'styled-components';
+import { injectGlobal } from 'styled-components';
 import styledNormalize from 'styled-normalize';
 
 export const globalStyles = () => injectGlobal`

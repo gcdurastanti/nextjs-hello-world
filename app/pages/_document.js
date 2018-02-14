@@ -1,5 +1,6 @@
+import React from 'react';
 import Document, { Head, Main as _Main, NextScript } from 'next/document';
-import styled, { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet } from 'styled-components';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import stickyVerticalLayout from '../styles/sticky-vertical-layout';

@@ -1,3 +1,3 @@
-import server from './server';
+import Server from './server';
 
-export default server().listen();
+export default Server().listen();

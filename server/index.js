@@ -7,10 +7,13 @@ import Bluebird from 'bluebird';
 
 import pkg from '../package.json';
 import nextConfig from '../next.config';
+import logger from './logger';
+import middleware from './middleware';
 
 const Server = () => {
 	const port = parseInt(process.env.PORT, 10) || 3000;
-	const dev = process.env.NODE_ENV !== 'production';
+	const env = process.env.NODE_ENV;
+	const dev = env !== 'production';
 	const nextApp = next({ dir: './app', dev, conf: nextConfig });
 	const handle = nextApp.getRequestHandler();
 
@@ -19,34 +22,21 @@ const Server = () => {
 		version: pkg.version
 	});
 
-	app.use(compression({ level: zlib.Z_BEST_COMPRESSION }));
+	app.use(compression({ threshold: 0, level: zlib.Z_BEST_COMPRESSION }));
 
-	const server = createServer(app);
-
-	app.get('/up', (req, res) => {
-		res
-			.status(200)
-			.set('Content-Type', 'text/plain')
-			.send('');
-	});
-
+	app.get('/up', middleware.healthCheck);
 	app.get('/', (req, res) => nextApp.render(req, res, '/home', req.query));
 	app.get('*', (req, res) => handle(req, res));
 
-	function listen() {
-		return nextApp.prepare().then(() => {
-			server.listen(port, err => {
-				if (err) throw err;
+	const server = createServer(app);
 
-				// eslint-disable-next-line no-console
-				console.log(`> Ready on http://localhost:${port}`);
-			});
-		});
-	}
+	const listen = () =>
+		nextApp
+			.prepare()
+			.then(() => server.listen(port))
+			.then(() => logger.serverStart(env, pkg.name, pkg.version, 'http://localhost', port));
 
-	function close() {
-		return Bluebird.fromCallback(cb => server.close(cb));
-	}
+	const close = () => Bluebird.fromCallback(cb => server.close(cb));
 
 	return Object.freeze({
 		listen,

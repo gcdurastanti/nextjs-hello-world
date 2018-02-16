@@ -1,4 +1,8 @@
 module.exports = {
+	exportPathMap: () => ({
+		'/': { page: '/' }
+	}),
+
 	webpack: config => config,
 	// Perform customizations to webpack config
 	// Important: return the modified config

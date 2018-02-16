@@ -26,7 +26,7 @@ export default class MyDocument extends Document {
 
 					{styleTags}
 
-					<link rel="shortcut icon" type="image/x-icon" href="/static/assets/favicon.ico" />
+					<link rel="shortcut icon" type="image/x-icon" href="/static/icons/favicon.ico" />
 					<link
 						href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
 						rel="stylesheet"

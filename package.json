@@ -9,7 +9,7 @@
     "prettier": "**/*.{js,json,css,jsx,md,mjs}"
   },
   "scripts": {
-    "dev": "nodemon --require babel-register .",
+    "dev": "cross-env NODE_ENV=development nodemon --require babel-register .",
     "local": "cross-env npm run build && npm start",
     "build": "next build app",
     "start": "cross-env NODE_ENV=production node --require babel-register .",
@@ -26,6 +26,7 @@
   "dependencies": {
     "axios": "0.17.1",
     "bluebird": "3.5.1",
+    "chalk": "2.3.1",
     "compression": "1.7.1",
     "express": "4.16.2",
     "next": "^5.0.0",

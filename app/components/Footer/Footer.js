@@ -1,24 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const Footer = ({ className }) => (
-	<a
-		href="https://github.com/stephencorwin/nextjs-hello-world"
-		target="_blank"
-		rel="noopener noreferrer"
-		title="stephencorwin/nextjs-hello-world"
-		className={className}
-	>
-		<i className="fa fa-github" />
-		stephencorwin/nextjs-hello-world
-	</a>
+export const Footer = ({ href, label, className }) => (
+	<div className={className}>
+		<a href={href} target="_blank" rel="noopener noreferrer" title={label}>
+			{label}
+		</a>
+	</div>
 );
 
 Footer.propTypes = {
+	href: PropTypes.string,
+	label: PropTypes.string,
 	className: PropTypes.string
 };
 
 Footer.defaultProps = {
+	href: '/',
+	label: 'Footer',
 	className: ''
 };
 

@@ -7,7 +7,13 @@ export const Footer = Component => styled(Component)`
 	color: black;
 	font-size: 16px;
 	text-align: center;
-	padding: 10px 0;
+	position: relative;
+	z-index: 10;
+
+	a {
+		display: inline-block;
+		padding: 10px;
+	}
 `;
 
 export default Footer;

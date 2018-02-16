@@ -24,6 +24,12 @@ export default class MyDocument extends Document {
 					<meta name="author" content="Stephen Corwin" />
 					<title>Next.js Hello World</title>
 					{styleTags}
+
+					{/* FONTS */}
+					<link
+						href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
+						rel="stylesheet"
+					/>
 				</Head>
 				<body>
 					<Main />

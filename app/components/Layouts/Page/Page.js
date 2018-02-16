@@ -8,9 +8,12 @@ const { Wrapper, Main } = stickyVerticalLayout();
 
 export const Page = ({ className, children }) => (
 	<Wrapper>
-		<Header />
+		<Header label="Hello, Next.js!" />
 		<Main className={className}>{children}</Main>
-		<Footer />
+		<Footer
+			href="https://github.com/stephencorwin/nextjs-hello-world"
+			label="stephencorwin/nextjs-hello-world"
+		/>
 	</Wrapper>
 );
 

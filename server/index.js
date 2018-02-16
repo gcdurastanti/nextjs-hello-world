@@ -1,6 +1,8 @@
 import { createServer } from 'http';
 import express from 'express';
 import next from 'next';
+import compression from 'compression';
+import zlib from 'zlib';
 import Bluebird from 'bluebird';
 
 import pkg from '../package.json';
@@ -16,6 +18,8 @@ const Server = () => {
 		pkgname: pkg.name,
 		version: pkg.version
 	});
+
+	app.use(compression({ level: zlib.Z_BEST_COMPRESSION }));
 
 	const server = createServer(app);
 

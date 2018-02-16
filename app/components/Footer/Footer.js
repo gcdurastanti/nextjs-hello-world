@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Wrapper from '../Wrapper';
+
 export const Footer = ({ href, label, className }) => (
 	<div className={className}>
-		<a href={href} target="_blank" rel="noopener noreferrer" title={label}>
-			{label}
-		</a>
+		<Wrapper>
+			<a href={href} target="_blank" rel="noopener noreferrer" title={label}>
+				{label}
+			</a>
+		</Wrapper>
 	</div>
 );
 

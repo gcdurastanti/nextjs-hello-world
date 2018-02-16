@@ -1,7 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const Header = ({ label, className }) => <div className={className}>{label}</div>;
+import Wrapper from '../Wrapper';
+
+export const Header = ({ label, className }) => (
+	<div className={className}>
+		<Wrapper>{label}</Wrapper>
+	</div>
+);
 
 Header.propTypes = {
 	label: PropTypes.string,

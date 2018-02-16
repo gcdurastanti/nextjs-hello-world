@@ -12,13 +12,13 @@ export const Home = ({ className }) => (
 		<Grid>
 			<Row>
 				<Col xs={12} sm={6} md={4}>
-					<Greeting />
+					<Greeting message="Hello, friend!" />
 				</Col>
 				<Col xs={12} sm={6} md={4}>
-					<Greeting />
+					<Greeting message="isn't Next.js Cool?" />
 				</Col>
 				<Col xs={12} sm={6} md={4}>
-					<Greeting />
+					<Greeting message="we think so!" />
 				</Col>
 				<Col xs={12} sm={6} md={4}>
 					<Greeting />

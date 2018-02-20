@@ -6,7 +6,7 @@ import stickyVerticalLayout from '../../../styles/sticky-vertical-layout';
 
 const { Wrapper, Main } = stickyVerticalLayout();
 
-export const Page = ({ className, children }) => (
+export const Layout = ({ className, children }) => (
 	<Wrapper>
 		<Header label="Hello, Next.js!" />
 		<Main className={className}>{children}</Main>
@@ -17,14 +17,14 @@ export const Page = ({ className, children }) => (
 	</Wrapper>
 );
 
-Page.propTypes = {
+Layout.propTypes = {
 	className: PropTypes.string,
 	children: PropTypes.node
 };
 
-Page.defaultProps = {
+Layout.defaultProps = {
 	className: '',
 	children: undefined
 };
 
-export default Page;
+export default Layout;
